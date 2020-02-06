@@ -10,7 +10,7 @@ var allQBtns = document.querySelectorAll(".questionBtn");
 var count = document.getElementById("count");
 var endMessage = document.querySelector("#endMessage");
 var intervalId;
-var finalScore;
+
 
 startBtn.addEventListener("click", function() {
     startContainer.classList.add('hide');
@@ -53,7 +53,7 @@ function setQuestion() {
 //         setQuestion();
 
 //     })
-// }
+// }0
 
 function scoring(answer) {
 
@@ -68,23 +68,75 @@ function scoring(answer) {
     else setQuestion();
 }
 
+var initialsInput;
+var saveBtn;
+var endofGameText;
 function endgame() {
     console.log("game ended");
     clearInterval(intervalId);
     endMessage.innerHTML="<h1>End of game!</h1>";
-     
-    var endofGameText= document.createElement('div')
-    endofGameText.textContent = "Your score is: " + secondsLeft;
+    initialsInput = document.createElement('input');
+    initialsInput.setAttribute("type", "text");
+    saveBtn = document.createElement('button');
+    saveBtn.textContent = "save";
+    endofGameText = document.createElement('div');
+    endofGameText.textContent = "Your score is: " + secondsLeft + ". Save your initials.";
     
     endMessage.appendChild(endofGameText);
-    //create button
+    endMessage.appendChild(initialsInput);
+    endMessage.appendChild(saveBtn);
+    //when you save you can see all the high scores and also CLEAR them and go back to the start of the quiz
     //
+    saveBtn.addEventListener("click", function(event){
+        event.preventDefault();
+        console.log("button works");
 
+        var user = {
+            initials: initialsInput.value.trim(),
+            score: secondsLeft
+        }
+        console.log(user);
+
+        localStorage.setItem("user", JSON.stringify(user));
+
+        
+    });
 }
 
-function highScoreSave() {
 
-}
+
+
+// function saveInitial(){
+
+// }
+
+//     var topScores = {
+//         initials: initialsInput.value.trim(),
+//         score: secondsLeft
+//     };
+
+//     if (topScores.initials === "") {
+//         displayMessage("Why keep that great score in complete anonimity?")
+//     }
+
+//     //set new submission
+//     localStorage.setItem("Top Scores", JSON.stringify(topScores));
+
+// //create button and input
+// saveBtn.addEventListener("click", function() {
+
+// });
+
+// function addInitials() {
+
+//     localStorage.setItem("topScores", JSON.stringify(a));
+// }
+
+// function showHighscores() {
+//     JSON.parse(localStorage.getItem("Top Scores"));
+//     endofGameText.textContent = //initials plus secondsLeft
+
+// }
 
 
 
