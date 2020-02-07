@@ -12,6 +12,10 @@
     font-size: 14px;
 }
 
+#highScores  a {
+    text-decoration: none;
+    color: #2f3030;
+}
 
 #highScores {
     text-align: left;
@@ -26,9 +30,19 @@ h1 {
     padding: 6px;
 }
 
+p{
+    padding: 6px;
+}
 .btn {
     margin: 4px;
     color: white;
+}
+
+
+#goBack a {
+    text-decoration-style: none !important;
+    text-decoration-color: white;
+
 }
 
 #displayNone {

@@ -10,6 +10,9 @@ var allQBtns = document.querySelectorAll(".questionBtn");
 var count = document.getElementById("count");
 var endMessage = document.querySelector("#endMessage");
 var intervalId;
+var initialsInput;
+var saveBtn;
+var endofGameText;
 
 
 startBtn.addEventListener("click", function() {
@@ -42,18 +45,7 @@ function setQuestion() {
         button.setAttribute("onclick", "scoring(" + i + ")");
         button.textContent = questions[qTracker].choices[i];
     }
-
-
 }
-
-// for (var j = 0; j < allQBtns.length; j++) {
-//     allQBtns[j].addEventListener("click", function () {
-//         console.log(this);
-//         qTracker++;
-//         setQuestion();
-
-//     })
-// }0
 
 function scoring(answer) {
 
@@ -68,9 +60,6 @@ function scoring(answer) {
     else setQuestion();
 }
 
-var initialsInput;
-var saveBtn;
-var endofGameText;
 function endgame() {
     console.log("game ended");
     clearInterval(intervalId);
@@ -85,8 +74,9 @@ function endgame() {
     endMessage.appendChild(endofGameText);
     endMessage.appendChild(initialsInput);
     endMessage.appendChild(saveBtn);
-    //when you save you can see all the high scores and also CLEAR them and go back to the start of the quiz
-    //
+    saveBtn.classList.add('btn', 'bg-info');
+
+   
     saveBtn.addEventListener("click", function(event){
         event.preventDefault();
         console.log("button works");
@@ -99,46 +89,16 @@ function endgame() {
 
         localStorage.setItem("user", JSON.stringify(user));
 
-        
+        newLocation();
+      
     });
+   
 }
 
-
-
-
-// function saveInitial(){
-
-// }
-
-//     var topScores = {
-//         initials: initialsInput.value.trim(),
-//         score: secondsLeft
-//     };
-
-//     if (topScores.initials === "") {
-//         displayMessage("Why keep that great score in complete anonimity?")
-//     }
-
-//     //set new submission
-//     localStorage.setItem("Top Scores", JSON.stringify(topScores));
-
-// //create button and input
-// saveBtn.addEventListener("click", function() {
-
-// });
-
-// function addInitials() {
-
-//     localStorage.setItem("topScores", JSON.stringify(a));
-// }
-
-// function showHighscores() {
-//     JSON.parse(localStorage.getItem("Top Scores"));
-//     endofGameText.textContent = //initials plus secondsLeft
-
-// }
-
-
+function newLocation() { 
+    window.location.href = "./assets/html/highScores.html"; 
+    console.log(window.location.href);
+} 
 
 
 

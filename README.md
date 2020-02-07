@@ -1,24 +1,12 @@
 # smartyPants
-Short timed quiz about basic coding concepts
 
-Needs to be responsive
+This is a responsive, short timed quiz about basic coding concepts. Every wrong answer subtracts 5 points from your score. You have one minute to answer and your score comes from the time left when you finished.
+At the end, the user is able to save their score.
 
-
-
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
+![SmartyPants_Game_Landing](./assets/img/index-first.PNG)
+![SmartyPants_Game_Count-down](./assets/img/index-second.PNG)
+![SmartyPants_Game_End](./assets/img/index-end.PNG)
+![SmartyPants_Game_Save-Initials](./assets/img/savedInitials.PNG)
 
 
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
 
