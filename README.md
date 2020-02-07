@@ -9,4 +9,9 @@ At the end, the user is able to save their score.
 ![SmartyPants_Game_Save-Initials](./assets/img/savedInitials.PNG)
 
 
+Deployed site at:
+
+[GitHub](https://tantatinta.github.io/smartyPants/)
+
+
 
