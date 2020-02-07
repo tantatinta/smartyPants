@@ -45,6 +45,12 @@ p{
 
 }
 
+#goBackAnchor:link, #goBackAnchor:visited {
+    text-decoration: none;
+    color: white;
+
+}
+
 #displayNone {
     display: none;
 }
